@@ -1,7 +1,6 @@
 package example.status;
 
 import example.TestBase;
-import io.restassured.RestAssured;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
