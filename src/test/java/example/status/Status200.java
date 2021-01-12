@@ -1,10 +1,21 @@
 package example.status;
 
 import example.TestBase;
+import org.testng.Assert;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class Status200 extends TestBase {
+    String browser;
+
+    @Parameters("browser")
+    @BeforeTest
+    public void setBrowser(String browser){
+        this.browser = browser;
+        System.out.println("Browser: " + browser);
+    }
 
     @DataProvider(name = "getEndpointAndStatus")
     public Object[][] getEndpointAndStatus() {
@@ -17,6 +28,11 @@ public class Status200 extends TestBase {
 
     @Test(dataProvider = "getEndpointAndStatus")
     public void getState(String endpoint, Integer status) {
-        System.out.println(endpoint + ": " + status);
+        System.out.println(browser + " - " + endpoint + ": " + status);
+    }
+
+    @Test
+    public void failCase() {
+        Assert.fail("Test Failure");
     }
 }

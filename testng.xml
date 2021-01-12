@@ -1,8 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Testing Google Apps">
-    <test name="Regression">
+    <listeners>
+        <listener class-name="example.listeners.AnnotationTransformer"></listener>
+    </listeners>
+    <test name="Regression Chrome" parallel = "tests">
+        <parameter name="browser" value="chrome"></parameter>
         <classes>
             <class name="example.status.Status200"/>
         </classes>
-    </test> <!-- Test -->
-</suite> <!-- Suite -->
+    </test>
+    <test name="Regression Firefox">
+    <parameter name="browser" value="firefox"></parameter>
+        <classes>
+            <class name="example.status.Status200"/>
+        </classes>
+    </test>
+</suite>
