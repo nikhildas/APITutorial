@@ -12,7 +12,7 @@ public class Status200 extends TestBase {
 
     @Parameters("browser")
     @BeforeTest
-    public void setBrowser(String browser){
+    public void setBrowser(String browser) {
         this.browser = browser;
         System.out.println("Browser: " + browser);
     }

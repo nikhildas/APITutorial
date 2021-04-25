@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 @ControllerAdvice
 public class StateExceptionController {
     @ExceptionHandler(value = StateNotFoundException.class)
-    public ResponseEntity<Object> exception(StateNotFoundException exception){
+    public ResponseEntity<Object> exception(StateNotFoundException exception) {
         return new ResponseEntity<>("State not found", HttpStatus.NOT_FOUND);
     }
 }

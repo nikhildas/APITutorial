@@ -4,14 +4,14 @@
     <listeners>
         <listener class-name="example.listeners.AnnotationTransformer"></listener>
     </listeners>
-    <test name="Regression Chrome" parallel = "tests">
+    <test name="Regression Chrome" parallel="tests">
         <parameter name="browser" value="chrome"></parameter>
         <classes>
             <class name="example.status.Status200"/>
         </classes>
     </test>
     <test name="Regression Firefox">
-    <parameter name="browser" value="firefox"></parameter>
+        <parameter name="browser" value="firefox"></parameter>
         <classes>
             <class name="example.status.Status200"/>
         </classes>
